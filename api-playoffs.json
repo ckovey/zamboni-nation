@@ -1,0 +1,133 @@
+{
+    "teams": [
+        {
+            "name": "anaheim",
+            "api": "https://api-web.nhle.com/v1/club-stats/ANA/20232024/3"
+        },
+        {
+            "name": "boston",
+            "api": "https://api-web.nhle.com/v1/club-stats/BOS/20232024/3"
+        },
+        {
+            "name": "buffalo",
+            "api": "https://api-web.nhle.com/v1/club-stats/BUF/20232024/3"
+        },
+        {
+            "name": "calgary",
+            "api": "https://api-web.nhle.com/v1/club-stats/CGY/20232024/3"
+        },
+        {
+            "name": "carolina",
+            "api": "https://api-web.nhle.com/v1/club-stats/CAR/20232024/3"
+        },
+        {
+            "name": "chicago",
+            "api": "https://api-web.nhle.com/v1/club-stats/CHI/20232024/3"
+        },
+        {
+            "name": "colorado",
+            "api": "https://api-web.nhle.com/v1/club-stats/COL/20232024/3"
+        },
+        {
+            "name": "columbus",
+            "api": "https://api-web.nhle.com/v1/club-stats/CBJ/20232024/3"
+        },
+        {
+            "name": "dallas",
+            "api": "https://api-web.nhle.com/v1/club-stats/DAL/20232024/3"
+        },
+        {
+            "name": "detroit",
+            "api": "https://api-web.nhle.com/v1/club-stats/DET/20232024/3"
+        },
+        {
+            "name": "edmonton",
+            "api": "https://api-web.nhle.com/v1/club-stats/EDM/20232024/3"
+        },
+        {
+            "name": "florida",
+            "api": "https://api-web.nhle.com/v1/club-stats/FLA/20232024/3"
+        },
+        {
+            "name": "losangeles",
+            "api": "https://api-web.nhle.com/v1/club-stats/LAK/20232024/3"
+        },
+        {
+            "name": "minnesota",
+            "api": "https://api-web.nhle.com/v1/club-stats/MIN/20232024/3"
+        },
+        {
+            "name": "montreal",
+            "api": "https://api-web.nhle.com/v1/club-stats/MTL/20232024/3"
+        },
+        {
+            "name": "nashville",
+            "api": "https://api-web.nhle.com/v1/club-stats/NSH/20232024/3"
+        },
+        {
+            "name": "newjersey",
+            "api": "https://api-web.nhle.com/v1/club-stats/NJD/20232024/3"
+        },
+        {
+            "name": "nyislanders",
+            "api": "https://api-web.nhle.com/v1/club-stats/NYI/20232024/3"
+        },
+        {
+            "name": "nyrangers",
+            "api": "https://api-web.nhle.com/v1/club-stats/NYR/20232024/3"
+        },
+        {
+            "name": "ottawa",
+            "api": "https://api-web.nhle.com/v1/club-stats/OTT/20232024/3"
+        },
+        {
+            "name": "philadelphia",
+            "api": "https://api-web.nhle.com/v1/club-stats/PHI/20232024/3"
+        },
+        {
+            "name": "pittsburgh",
+            "api": "https://api-web.nhle.com/v1/club-stats/PIT/20232024/3"
+        },
+        {
+            "name": "sanjose",
+            "api": "https://api-web.nhle.com/v1/club-stats/SJS/20232024/3"
+        },
+        {
+            "name": "seattle",
+            "api": "https://api-web.nhle.com/v1/club-stats/SEA/20232024/3"
+        },
+        {
+            "name": "stlouis",
+            "api": "https://api-web.nhle.com/v1/club-stats/STL/20232024/3"
+        },
+        {
+            "name": "tampabay",
+            "api": "https://api-web.nhle.com/v1/club-stats/TBL/20232024/3"
+        },
+        {
+            "name": "toronto",
+            "api": "https://api-web.nhle.com/v1/club-stats/TOR/20232024/3"
+        },
+        {
+            "name": "utah",
+            "api": "https://api-web.nhle.com/v1/club-stats/UTA/20232024/3"
+        },
+        {
+            "name": "vancouver",
+            "api": "https://api-web.nhle.com/v1/club-stats/VAN/20232024/3"
+        },
+        {
+            "name": "vegas",
+            "api": "https://api-web.nhle.com/v1/club-stats/VGK/20232024/3"
+        },
+        {
+            "name": "washington",
+            "api": "https://api-web.nhle.com/v1/club-stats/WSH/20232024/3"
+        },
+        {
+            "name": "winnipeg",
+            "api": "https://api-web.nhle.com/v1/club-stats/WPG/20232024/3"
+        }
+    ]
+}
+    

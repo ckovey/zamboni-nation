@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hockey Player Stats</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+        th {
+            cursor: pointer;
+            background-color: #f2f2f2;
+        }
+        th.sort-asc::after {
+            content: " ▲";
+        }
+        th.sort-desc::after {
+            content: " ▼";
+        }
+    </style>
+</head>
+<body class="">
+    <h1>Hockey Player Stats</h1>
+    <table id="playerTable">
+        <thead>
+            <tr>
+                <th onclick="sortTable(0)">Name</th>
+                <th onclick="sortTable(1)">Position</th>
+                <th onclick="sortTable(2)">Goals/Wins</th>
+                <th onclick="sortTable(3)">Assists/Shutouts</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Data will be populated here -->
+        </tbody>
+    </table>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            fetch('master.json')
+                .then(response => response.json())
+                .then(data => {
+                    const players = data.players;
+                    const tableBody = document.querySelector('#playerTable tbody');
+
+                    players.forEach(player => {
+                        const row = document.createElement('tr');
+                        const nameCell = document.createElement('td');
+                        const positionCell = document.createElement('td');
+                        const stat1Cell = document.createElement('td');
+                        const stat2Cell = document.createElement('td');
+
+                        nameCell.textContent = player.name;
+                        positionCell.textContent = player.position;
+
+                        if (player.positionCode === 'G') {
+                            stat1Cell.textContent = player.wins;
+                            stat2Cell.textContent = player.shutouts;
+                        } else {
+                            stat1Cell.textContent = player.goals;
+                            stat2Cell.textContent = player.assists;
+                        }
+
+                        row.appendChild(nameCell);
+                        row.appendChild(positionCell);
+                        row.appendChild(stat1Cell);
+                        row.appendChild(stat2Cell);
+                        tableBody.appendChild(row);
+                    });
+                })
+                .catch(error => console.error('Error fetching data:', error));
+        });
+
+        function sortTable(columnIndex) {
+            const table = document.getElementById('playerTable');
+            const tbody = table.tBodies[0];
+            const rows = Array.from(tbody.rows);
+            const isAscending = table.dataset.sortOrder === 'asc';
+            const direction = isAscending ? 1 : -1;
+
+            rows.sort((rowA, rowB) => {
+                const cellA = rowA.cells[columnIndex].textContent.trim();
+                const cellB = rowB.cells[columnIndex].textContent.trim();
+                const a = isNaN(cellA) ? cellA.toLowerCase() : parseFloat(cellA);
+                const b = isNaN(cellB) ? cellB.toLowerCase() : parseFloat(cellB);
+
+                if (a < b) return -1 * direction;
+                if (a > b) return 1 * direction;
+                return 0;
+            });
+
+            rows.forEach(row => tbody.appendChild(row));
+
+            table.dataset.sortOrder = isAscending ? 'desc' : 'asc';
+            updateSortIndicators(table, columnIndex, table.dataset.sortOrder);
+        }
+
+        function updateSortIndicators(table, columnIndex, sortOrder) {
+            const headers = table.querySelectorAll('th');
+            headers.forEach((header, index) => {
+                header.classList.remove('sort-asc', 'sort-desc');
+                if (index === columnIndex) {
+                    header.classList.add(sortOrder === 'asc' ? 'sort-asc' : 'sort-desc');
+                }
+            });
+        }
+    </script>
+</body>
+</html>
