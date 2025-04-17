@@ -1,4 +1,7 @@
 <?php
+require_once('../vendor/autoload.php');
+$dotenv = Dotenv\Dotenv::createImmutable(dirname(__DIR__));
+$dotenv->load();
 // -------------------------
 // 1. Retrieve Database Entries
 // -------------------------
@@ -6,10 +9,10 @@
 // $dbname = 'zamboni';
 // $username = 'root';
 // $password = 'daryl';
-$servername = 'db5016968169.hosting-data.io';
-$dbname = 'dbs13676363';
-$username = 'dbu233768';
-$password = 'xpq$Zamboni2025';
+$servername = $_ENV['DB_HOSTNAME'];
+$dbname = $_ENV['DB_NAME'];
+$username = $_ENV['DB_USERNAME'];
+$password = $_ENV['DB_PASSWORD'];
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
