@@ -12,7 +12,7 @@
 <body>
   <?php
 
-  $json = file_get_contents('apis.json');
+  $json = file_get_contents('apis-qualified.json');
 
   $data = json_decode($json, true);
 

@@ -1,0 +1,69 @@
+{
+    "teams": [
+        {
+            "name": "carolina",
+            "api": "https://api-web.nhle.com/v1/club-stats/CAR/20242025/2"
+        },
+        {
+            "name": "colorado",
+            "api": "https://api-web.nhle.com/v1/club-stats/COL/20242025/2"
+        },
+        {
+            "name": "dallas",
+            "api": "https://api-web.nhle.com/v1/club-stats/DAL/20242025/2"
+        },
+        {
+            "name": "edmonton",
+            "api": "https://api-web.nhle.com/v1/club-stats/EDM/20242025/2"
+        },
+        {
+            "name": "florida",
+            "api": "https://api-web.nhle.com/v1/club-stats/FLA/20242025/2"
+        },
+        {
+            "name": "losangeles",
+            "api": "https://api-web.nhle.com/v1/club-stats/LAK/20242025/2"
+        },
+        {
+            "name": "minnesota",
+            "api": "https://api-web.nhle.com/v1/club-stats/MIN/20242025/2"
+        },
+        {
+            "name": "montreal",
+            "api": "https://api-web.nhle.com/v1/club-stats/MTL/20242025/2"
+        },
+        {
+            "name": "newjersey",
+            "api": "https://api-web.nhle.com/v1/club-stats/NJD/20242025/2"
+        },
+        {
+            "name": "ottawa",
+            "api": "https://api-web.nhle.com/v1/club-stats/OTT/20242025/2"
+        },
+        {
+            "name": "stlouis",
+            "api": "https://api-web.nhle.com/v1/club-stats/STL/20242025/2"
+        },
+        {
+            "name": "tampabay",
+            "api": "https://api-web.nhle.com/v1/club-stats/TBL/20242025/2"
+        },
+        {
+            "name": "toronto",
+            "api": "https://api-web.nhle.com/v1/club-stats/TOR/20242025/2"
+        },
+        {
+            "name": "vegas",
+            "api": "https://api-web.nhle.com/v1/club-stats/VGK/20242025/2"
+        },
+        {
+            "name": "washington",
+            "api": "https://api-web.nhle.com/v1/club-stats/WSH/20242025/2"
+        },
+        {
+            "name": "winnipeg",
+            "api": "https://api-web.nhle.com/v1/club-stats/WPG/20242025/2"
+        }
+    ]
+}
+    

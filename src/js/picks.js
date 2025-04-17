@@ -50,7 +50,7 @@ document.getElementById('picks-form').addEventListener('submit', (event) => {
   const defenceCount = Array.from(defence).filter(checkbox => checkbox.checked).length;
   const goalieCount = Array.from(goalie).filter(checkbox => checkbox.checked).length;
 
-  // Check if the count is exactly 2
+  // Check if the count is exact
   if (forwardCount !== 12 || defenceCount !== 6 || goalieCount !== 2) {
     modal.style.display = "block";
     modalContent.innerHTML += '<img src="assets/img/wrong.jpg" alt="WRONGGGGG!"><br/><br/>You must select: 12 forwards, 6 defence, and 2 goalies.<br/><br/>You chose: ' + forwardCount + ' forwards, ' + defenceCount + ' defence, and ' + goalieCount + ' goalies.';

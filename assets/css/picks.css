@@ -1,16 +1,3 @@
-body {
-  margin: 10px;
-  text-align: center;
-}
-body .title-logo {
-  margin: 20px auto;
-  width: 80%;
-  max-width: 600px;
-}
-body .title-logo img {
-  width: 100%;
-}
-
 @media (min-width: 769px) {
   .master-container {
     display: flex;
@@ -97,6 +84,11 @@ input.rowCheckbox {
 .team-container tr:nth-child(even), .final-team-container tr:nth-child(even) {
   background-color: #f9f9f9;
 }
+
+.team-container tr:nth-child(odd), .final-team-container tr:nth-child(odd) {
+  background-color: #f0f0f0;
+}
+
 .team-container tr:hover, .final-team-container tr:hover {
   background-color: #f1f1f1;
 }

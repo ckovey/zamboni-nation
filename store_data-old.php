@@ -64,12 +64,51 @@
 
     // Execute the query and check if successful
     if ($stmt->execute()) {
-      echo "<h2>Picks submitted successfully!</h2>";
-      echo "<p>Thanks for submitting your picks! Click on Entries in the menu to see your team list!</p>";
-      echo "<h3>Good luck and have fun!</h3>";
+      echo "Picks submitted successfully! Here's your team:<br/><br/>";
+      echo "Name: <strong>" . $personname . "</strong><br/>";
+      echo "Team Name: <strong>" . $teamname . "</strong><br/>";
     } else {
       // Handle error if the execution fails
       die("Error: Failed to insert data. " . $stmt->error);
+    }
+
+    // Fetch the table_data from the entries table
+    $sql = "SELECT table_data FROM entries LIMIT 1";  // Adjust as needed (e.g., to fetch a specific row)
+    $result = $conn->query($sql);
+
+    // Check if the query was successful
+    if ($result->num_rows > 0) {
+      // Fetch the row containing the table_data
+      $row = $result->fetch_assoc();
+
+      // Decode the JSON-encoded table data
+      $tableData = json_decode($row['table_data'], true);  // The 'true' parameter returns an associative array
+
+      // Check if JSON decoding was successful
+      if ($tableData === null) {
+        die("Error: The table data is not valid JSON.");
+      }
+      
+
+      // Start building the HTML table
+      echo "<div class='final-team-container'>";
+      echo "<table id='picks-table'>";
+      echo "<thead><tr><th>Name</th><th>Position</th></tr></thead>";
+      echo "<tbody>";
+
+      // Loop through the decoded table data and create rows
+      foreach ($tableData as $rowData) {
+        echo "<tr>";
+        echo "<td>" . htmlspecialchars($rowData[0]) . "</td>";  // Name
+        //echo "<td>" . htmlspecialchars($rowData[1]) . "</td>";  // Player ID
+        echo "<td>" . htmlspecialchars($rowData[2]) . "</td>";  // Position
+        echo "</tr>";
+      }
+
+      // Close the table
+      echo "</tbody></table>";
+    } else {
+      echo "No data found.";
     }
 
     // Close the prepared statement and database connection
@@ -80,6 +119,10 @@
     die("Invalid request method.");
   }
   ?>
+
+  <script>
+    console.log(<?php echo json_encode($_POST); ?>);
+  </script>
 
 </body>
 

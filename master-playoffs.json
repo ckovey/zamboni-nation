@@ -5,12 +5,12 @@
         "skaters": [],
         "goalies": []
     },
-        "boston": {
-            "season": "20232024",
-            "gameType": 3,
-            "skaters": [
-                {
-                    "playerId": 8473419,
+    "boston": {
+        "season": "20232024",
+        "gameType": 3,
+        "skaters": [
+            {
+                "playerId": 8473419,
                 "headshot": "https:\/\/assets.nhle.com\/mugs\/nhl\/20232024\/BOS\/8473419.png",
                 "firstName": {
                     "default": "Brad"
@@ -9067,9 +9067,7 @@
                     "default": "Martin"
                 },
                 "lastName": {
-                    "default": "Fehervary",
-                    "cs": "Feh\u00e9rv\u00e1ry",
-                    "sk": "Feh\u00e9rv\u00e1ry"
+                    "default": "Feh\u00e9rv\u00e1ry"
                 },
                 "positionCode": "D",
                 "gamesPlayed": 4,

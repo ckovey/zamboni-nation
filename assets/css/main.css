@@ -1,12 +1,13 @@
 body {
   margin: 0 auto;
   text-align: center;
+  background: url(../img/ice.png) center center repeat;
 }
 
 .title-logo {
-  margin: 20px auto;
+  margin: 100px auto 20px;
   width: 80%;
-  max-width: 600px;
+  max-width: 500px;
 }
 
 .title-logo img {
@@ -29,11 +30,19 @@ body {
   justify-content: center;
   align-items: center;
   margin: 2px;
-  padding: 20px;
+  padding: 7px;
   border: 1px solid #000;
   border-radius: 5px;
-  width: 60px;
+  width: 50px;
   height: 50px;
+}
+
+.teams-container .team.eliminated img {
+  opacity: 0.25;
+}
+
+.teams-container .team.eliminated a {
+  cursor: not-allowed;
 }
 
 .teams-container .team img {
@@ -46,7 +55,8 @@ body {
     max-width: 1130px;
   }
   .teams-container .team {
-    width: 80px;
-    height: 80px;
+    width: 100px;
+    height: 100px;
+    padding: 15px;
   }
 }

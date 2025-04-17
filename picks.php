@@ -4,24 +4,26 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>2023-24 Playoff Stats</title>
+  <title>Zamboni Nation Hockey Pool</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="stylesheet" href="assets/css/picks.css">
+  <link rel="stylesheet" href="assets/css/main.css">
 </head>
 
 <body>
-  <div class="title-logo">
-    <img src="logos/zn-title-logo.png" alt="Zamboni Nation Hockey Pool" />
-  </div>
+  <?php include 'navbar.php'; ?>
   <h1>Make your picks!</h1>
-  <p>Choose 12 forwards, 6 defencemen and 2 goalies.</p>
+  <h2>Choose 12 forwards, 6 defencemen and 2 goalies.</h2>
+
+  <p style="font-weight: 700; font-size: 18px;">There is a tracker at the bottom of the page that will tell you how many of each player you still need.</p>
 
   <form class="picks-form" id="picks-form" action="store_data.php" method="POST">
 
     <div class="master-container">
 
       <?php
-      $json_url = "master-playoffs.json";
+      $json_url = "master.json";
       $json_data = file_get_contents($json_url);
       $data = json_decode($json_data, true);
       // echo '<pre>';
@@ -81,7 +83,7 @@
                     </thead>";
               echo "<tbody>";
               foreach ($teamData['goalies'] as $goalie) {
-                $poolpoints = ($goalie['wins'] * 1) + ($goalie['shutouts'] * 3);
+                $poolpoints = ($goalie['wins'] * 2) + ($goalie['shutouts'] * 3);
                 echo "<tr class='goalie' style='background-color:hsl(180, 100.00%, 94.90%);'>";
                 echo "<td style='font-weight:700;'>" . htmlspecialchars($goalie['firstName']['default']) . " " . htmlspecialchars($goalie['lastName']['default']) . "</td>";
                 echo "<td class='id'>" . htmlspecialchars($goalie['playerId']) . "</td>";
@@ -130,8 +132,8 @@
 
 
 
-    <h2>Final Picks</h2>
-    <div class="final-team-container">
+    <h2 style="display: none;">Final Picks</h2>
+    <div style="display: none;" class="final-team-container">
       <table id="picks-table">
         <thead>
           <tr>
@@ -156,6 +158,7 @@
     </div>
   </div>
 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
   <script src="assets/js/picks.js"></script>
   <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.32.0/js/jquery.tablesorter.min.js" integrity="sha512-O/JP2r8BG27p5NOtVhwqsSokAwEP5RwYgvEzU9G6AfNjLYqyt2QT8jqU1XrXCiezS50Qp1i3ZtCQWkHZIRulGA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
